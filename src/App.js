@@ -7,6 +7,8 @@ import SkillsSection from "./components/SkillsSection.tsx";
 import ContactSection from "./components/ContactSection.tsx";
 import Footer from "./components/Footer.tsx";
 import Papers from "./components/Papers.tsx";
+import Drawings from "./components/CreativeExpressions.tsx";
+import Navbar from "./components/Navbar.tsx";
 
 function App() {
   const aboutRef = useRef < HTMLDivElement > null;
@@ -32,8 +34,10 @@ function App() {
       <Experience />
       <SkillsSection />
       <Papers />
+      <Drawings />
       <ContactSection />
       <Footer />
+      <Navbar />
     </>
   );
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import ProfileImg from "../images/Profile.jpeg";
-import Navbar from "./Navbar.tsx";
+import ProfileImg from "../images/profile.jpeg";
+import { FiDownload } from "react-icons/fi";
 
 const Section = styled.section`
   height: 100vh;
@@ -15,41 +15,32 @@ const StyledComponent = styled.div`
 `;
 const Left = styled.div`
   flex: 1;
-  background-color: #e2e8f0;
-  padding: 100px 60px;
+  padding-left: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
-
 const Right = styled.div`
   flex: 1;
-  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  padding-right: 130px;
 `;
-
 const Name = styled.h1`
   font-size: 3rem;
   font-weight: bold;
-  color: #0f172a;
   margin: 10px 0;
 `;
-
 const Title = styled.h2`
   font-size: 1.25rem;
-  color: #475569;
 `;
-
 const Intro = styled.p`
   font-size: 1rem;
-  color: #334155;
   margin-top: 20px;
   max-width: 400px;
 `;
-
 const IconRow = styled.div`
   display: flex;
   gap: 20px;
@@ -74,17 +65,66 @@ const IconRow = styled.div`
     }
   }
 `;
-
 const ProfileImage = styled.img`
-  max-height: 80%;
+  width: 450px;
+  height: 750px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 180px / 240px;
+  border: 6px solid #38bdf8;
+  box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
+  animation: pulse 2.5s infinite;
+  &:hover {
+    animation: none;
+    transform: scale(1.04);
+    box-shadow: 0 16px 36px rgba(56, 189, 248, 0.5);
+  }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4);
+    }
+    70% {
+      box-shadow: 0 0 0 36px rgba(56, 189, 248, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    }
+  }
+`;
+
+const DownloadButton = styled.a`
+  display: inline-flex;
+  width: 200px;
+  margin-top: 50px;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #6b21a8, #3b82f6);
+  border: none;
+  border-radius: 40px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(59, 130, 246, 0.5);
+  }
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 6px 12px rgba(59, 130, 246, 0.2);
+  }
+`;
+const Icon = styled(FiDownload)`
+  font-size: 1.2rem;
 `;
 
 export default function Profile() {
   return (
     <Section>
-      <Navbar />
       <StyledComponent>
         <Left>
           <p>Hi, I am</p>
@@ -105,6 +145,10 @@ export default function Profile() {
               <FaLinkedin />
             </a>
           </IconRow>
+          <DownloadButton href="/MahimaYandeResume.pdf" download>
+            <Icon style={{ marginRight: "8px" }} />
+            Download Resume
+          </DownloadButton>
         </Left>
 
         <Right>

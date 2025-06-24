@@ -1,36 +1,72 @@
 import styled from "styled-components";
 
-const Section = styled.div`
-  height: 30vh;
-  padding: 80px 20px;
-  background-color: #f0f0f0;
+const Section = styled.section`
+  padding: 100px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 `;
-
 const Heading = styled.h2`
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  position: relative;
+  &::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #38bdf8;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
 `;
-
+const ParagraphContainer = styled.div`
+  max-width: 900px;
+  margin-top: 20px;
+`;
 const Paragraph = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #cbd5e1;
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    text-align: left;
+  }
 `;
 
 const AboutMe = () => {
   return (
     <Section id="about">
       <Heading>About Me</Heading>
-      <Paragraph>
-        6+ years experience as a Full Stack Developer, highly skilled in web
-        page development, Front-end Development, Back-end Development, Unit
-        Test, Android, PL-SQL, etc. across the complete SDLC of the product.
-        Skilled in translating business ideas to platform features using
-        front-end technologies like React, Bootstrap, AG-Grid, and CSS, with
-        full support for Desktop, tablets, and mobile. Adept at end-to-end
-        software design & development including understanding designs from
-        Figma. Handled complex projects, managed & coordinated work very
-        efficiently to deliver results.
-      </Paragraph>
+      <ParagraphContainer>
+        <Paragraph>
+          I'm a passionate Full Stack Developer with over 6 years of experience
+          building robust, scalable, and responsive applications across the full
+          software development lifecycle.
+        </Paragraph>
+        <Paragraph>
+          I specialize in front-end development using React, Bootstrap, AG-Grid,
+          and CSS, delivering seamless experiences across desktop, tablet, and
+          mobile platforms. On the back end, I'm confident in developing
+          reliable APIs and services, supported by experience with PL-SQL,
+          Android, and thorough unit testing practices.
+        </Paragraph>
+        <Paragraph>
+          I bring a strong ability to translate business requirements into
+          platform features, collaborating closely with designers (e.g., Figma)
+          and stakeholders to deliver user-focused solutions. My background
+          includes managing complex projects independently, ensuring timely,
+          high-quality deliveries through structured planning and efficient
+          coordination.
+        </Paragraph>
+        <Paragraph>
+          Whether it's crafting intuitive UIs or optimizing backend logic, I’m
+          driven by a love for clean code, scalable architecture, and impactful
+          software.
+        </Paragraph>
+      </ParagraphContainer>
     </Section>
   );
 };

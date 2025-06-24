@@ -21,15 +21,12 @@ import micronaut from "../images/icons/micronaut.svg";
 
 const Section = styled.section`
   padding: 80px 40px;
-  background: #f9fafb;
-  min-height: 100vh;
 `;
 
 const Title = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 60px;
-  color: #1e293b;
 `;
 
 const CategoryWrapper = styled.div`
@@ -39,7 +36,6 @@ const CategoryWrapper = styled.div`
 
 const CategoryTitle = styled.h3`
   font-size: 1.7rem;
-  color: #334155;
   margin-bottom: 30px;
   text-align: center;
   text-transform: capitalize;
@@ -68,7 +64,6 @@ const SkillIcon = styled.img`
 
 const SkillName = styled.span`
   font-size: 0.95rem;
-  color: #334155;
 `;
 
 const TECHNICAL_SKILLS = {

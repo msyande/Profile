@@ -1,30 +1,30 @@
-// src/components/Navbar.tsx
 import styled from "styled-components";
 
 const Nav = styled.nav`
-  position: absolute;
-  top: 0;
-  width: 90%;
-  padding: 30px 60px;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 800px;
+  padding: 14px 30px;
+  background: rgba(56, 189, 248, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  z-index: 10;
-
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   @media (max-width: 768px) {
-    padding: 20px;
+    flex-direction: column;
+    padding: 16px;
+    gap: 10px;
   }
-`;
-
-const Logo = styled.div`
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #0f172a;
 `;
 
 const NavLinks = styled.div`
   display: flex;
-  gap: 30px;
+  gap: 28px;
   align-items: center;
 
   a {
@@ -34,17 +34,17 @@ const NavLinks = styled.div`
     transition: color 0.2s;
 
     &:hover {
-      color: #1e3a8a;
+      color: #0f172a;
     }
   }
 
   @media (max-width: 768px) {
-    display: none; /* You can replace this with a mobile menu later */
+    flex-direction: column;
   }
 `;
 
 const ContactButton = styled.a`
-  padding: 10px 20px;
+  padding: 8px 18px;
   background-color: #0f172a;
   color: #fff;
   border-radius: 999px;
@@ -59,12 +59,11 @@ const ContactButton = styled.a`
 export default function Navbar() {
   return (
     <Nav>
-      <Logo></Logo>
       <NavLinks>
         <a href="#about">About me</a>
         <a href="#skills">Skills</a>
         <a href="#experiences">Experiences</a>
-        <ContactButton href="#contact">Contact Me</ContactButton>
+        <a href="#contact">Contact Me</a>
       </NavLinks>
     </Nav>
   );

@@ -1,23 +1,21 @@
 import { styled } from "styled-components";
 
 export const Section = styled.section`
-  min-height: 100vh;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #f9fafb, #e2e8f0);
+  padding: 150px 20px;
 `;
 
 export const Title = styled.h2`
   font-size: 2.8rem;
   text-align: center;
-  color: #1e293b;
   margin-bottom: 60px;
   position: relative;
+  color: #f8fafc;
 
   &::after {
     content: "";
     width: 70px;
     height: 4px;
-    background-color: #3b82f6;
+    background-color: #38bdf8;
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -32,34 +30,39 @@ export const CardContainer = styled.div`
   gap: 40px;
   max-width: 1100px;
   margin: 0 auto;
+
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
 `;
 
 export const Card = styled.div`
-  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 150px;
+  background: #366baf;
   border-radius: 14px;
   padding: 25px 30px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
   }
 
   h3 {
-    font-size: 1.3rem;
-    color: #0f172a;
+    font-size: 1.4rem;
     margin-bottom: 8px;
+    color: #f8fafc;
   }
 
   p {
     margin: 0;
-    color: #475569;
-    font-size: 0.95rem;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    padding-bottom: 35px;
   }
 `;
 
@@ -68,12 +71,19 @@ export const ExperienceContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 10px;
+
+  h3 {
+    margin: 0;
+  }
 `;
 
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,11 +100,11 @@ export const ModalBox = styled.div`
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
   max-height: 80vh;
   overflow-y: auto;
+  color: #1e293b;
 
   h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #1e293b;
   }
 
   h4 {
@@ -102,6 +112,12 @@ export const ModalBox = styled.div`
     margin-bottom: 10px;
     font-size: 1.1rem;
     color: #334155;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #475569;
   }
 
   ul {
@@ -127,7 +143,6 @@ export const CloseButton = styled.button`
   color: #94a3b8;
   cursor: pointer;
   transition: color 0.2s ease;
-
   &:hover {
     color: #1e293b;
   }

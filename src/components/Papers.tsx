@@ -11,7 +11,6 @@ interface Paper {
 
 const Section = styled.section`
   padding: 100px 20px;
-  background: linear-gradient(to bottom, #f9fafb, #e2e8f0);
 `;
 const Container = styled.div`
   max-width: 1100px;
@@ -21,7 +20,6 @@ const Title = styled.h2`
   text-align: center;
   font-size: 2.8rem;
   margin-bottom: 60px;
-  color: #1e293b;
   position: relative;
 
   &::after {
@@ -42,7 +40,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 const Card = styled.div`
-  background: #ffffff;
+  background: #366baf;
   border-radius: 14px;
   padding: 30px 25px;
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
@@ -60,13 +58,13 @@ const PaperTitle = styled.h3`
 `;
 const Description = styled.p`
   font-size: 0.97rem;
-  color: #475569;
+  color: #ffffff;
   margin-bottom: 16px;
   line-height: 1.6;
 `;
 const Meta = styled.div`
   font-size: 0.85rem;
-  color: #64748b;
+  color: #ffffff;
   margin-bottom: 14px;
 `;
 const ViewLink = styled.a`

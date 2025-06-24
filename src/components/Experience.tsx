@@ -5,7 +5,6 @@ import {
   Card,
   CardContainer,
   CloseButton,
-  ExperienceContainer,
   ModalBox,
   Overlay,
   Section,
@@ -25,9 +24,9 @@ export default function Experience() {
       <CardContainer>
         {experiences.map((exp) => (
           <Card key={exp.id} onClick={() => handleCardClick(exp)}>
-            <ExperienceContainer>
-              <h3>{exp.title}</h3> <p>{exp.period}</p>
-            </ExperienceContainer>
+            {/* <ExperienceContainer> */}
+            <h3>{exp.title}</h3> <p>{exp.period}</p>
+            {/* </ExperienceContainer> */}
             <p>{exp.company}</p>
           </Card>
         ))}

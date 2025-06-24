@@ -4,9 +4,7 @@ import emailjs from "emailjs-com";
 import { useRef, useState } from "react";
 
 const Section = styled.section`
-  background-color: #f1f5f9;
   padding: 80px 20px;
-  min-height: 100vh;
 `;
 
 const Container = styled.div`
@@ -18,7 +16,6 @@ const Title = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 60px;
-  color: #1e293b;
 `;
 
 const ContentWrapper = styled.div`
@@ -37,7 +34,7 @@ const Cards = styled.div`
 `;
 
 const Card = styled.div`
-  background: #ffffff;
+  background: #366baf;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -74,7 +71,7 @@ const MessageLink = styled.a`
 const FormWrapper = styled.div`
   flex: 1;
   min-width: 280px;
-  background: #ffffff;
+  background: #366baf;
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
@@ -161,7 +158,6 @@ export default function Contact() {
       <Container>
         <Title>Contact Me</Title>
         <ContentWrapper>
-          {/* Left: Contact Cards */}
           <Cards>
             <Card>
               <IconWrapper>
@@ -230,5 +226,3 @@ export default function Contact() {
     </Section>
   );
 }
-// emailjs.send("service_7vsxsqr","template_dpnfcbj");
-// publicKey: J1xqH1yKNujfnxhOS

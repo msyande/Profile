@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 
 const FooterContainer = styled.footer`
-  background-color: #1e293b;
   color: #f8fafc;
   padding: 40px 20px;
+  margin-bottom: 45px;
   text-align: center;
 `;
 
@@ -21,25 +21,6 @@ const SocialLinks = styled.div`
 
     &:hover {
       color: #60a5fa;
-    }
-  }
-`;
-
-const NavLinks = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 15px;
-
-  a {
-    color: #cbd5e1;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: color 0.3s;
-
-    &:hover {
-      color: #ffffff;
     }
   }
 `;
@@ -69,14 +50,6 @@ const Footer = () => {
           <FaFacebookF />
         </a>
       </SocialLinks>
-
-      <NavLinks>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </NavLinks>
-
       <Copy>
         © {new Date().getFullYear()} Mahima Yande. All rights reserved.
       </Copy>
