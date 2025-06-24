@@ -1,0 +1,76 @@
+[
+  {
+    "id": "intern-xyz",
+    "title": "Software Development Engineer",
+    "company": "ISS Stoxx",
+    "period": "Jan 2022 - Present",
+    "description": "Worked on React-based UI components. Built features and learned responsive design and accessibility.",
+    "location": "Mumbai",
+    "responsibilities": [
+      "Working as part of the redesign team for migrating an established enterprise software product with a high volume of financial data flow to a new interface and back-end.",
+      "Creating reusable components for Web Pages using React, TypeScript, AG-Grid and Redux for state management.",
+      "Establishing best practices for the code base as a project goes on, using ES-Lint to maintain clean and consistent code throughout the project.",
+      "Writing Unit Tests using Jest and react-testing-library to ensure high code quality.",
+      "Involved in wring back-end micro-services using Java and connecting the micro-services to the front-end using REST APIs.",
+      "Have worked on Development of JIRA Tickets, involved in planning the Sprint and given Demos in Sprint Review."
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "Redux",
+      "JSX",
+      "Typescript"
+    ]
+  },
+  {
+    "id": "ui-abc",
+    "title": "System Engineer",
+    "company": "TCS",
+    "period": "Jun 2019 - Dec 2021",
+    "description": "Developed modern interfaces using TypeScript, implemented unit tests and CI/CD deployment with the team.",
+    "location": "Mumbai",
+    "responsibilities": [
+      "Designed and developed responsive and dynamic web applications using ReactJS, ensuring high performance and a seamless user experience.",
+      "Collaborated with cross-functional teams to implement new features and improve existing functionality, maintaining clean and reusable code practices.",
+      "Diagnosed and resolved critical issues reported by clients, consistently meeting tight deadlines and maintaining high-quality standards.",
+      "Created and optimised PL/SQL scripts with minimal errors, enhancing back-end functionality.",
+      "Proficient in writing and executing complex SQL queries to meet business requirements.",
+      "Performed seamless code migration across different environments, ensuring continuity and reliability during transitions."
+    ],
+    "technologies": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "Redux",
+      "JSX",
+      "Typescript"
+    ]
+  },
+  {
+    "id": "ui-abc",
+    "title": "Frontend developer",
+    "company": "TAPS",
+    "period": "Intership",
+    "description": "Developed modern interfaces using TypeScript, implemented unit tests and CI/CD deployment with the team.",
+    "location": "Tarapur",
+    "responsibilities": [
+      "Worked as a Web Developer to develop web pages by using scripting languages."
+    ],
+    "technologies": ["HTML5", "CSS3", "JavaScript", "Bootstrap"]
+  },
+  {
+    "id": "ui-abc",
+    "title": "Android Developer",
+    "company": "Trivia Softwares",
+    "period": "Intership",
+    "description": "Developed modern interfaces using TypeScript, implemented unit tests and CI/CD deployment with the team.",
+    "location": "Thane",
+    "responsibilities": [
+      "Worked as a Android Developer to develop 'BMI Calculator' - An application that calculates BMI of Person and save the data in database."
+    ],
+    "technologies": ["Android", "React Native", "Typescript"]
+  }
+]
