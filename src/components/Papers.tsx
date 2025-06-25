@@ -21,7 +21,6 @@ const Title = styled.h2`
   font-size: 2.8rem;
   margin-bottom: 60px;
   position: relative;
-
   &::after {
     content: "";
     width: 80px;
@@ -40,17 +39,54 @@ const Grid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `;
 const Card = styled.div`
-  background: #366baf;
-  border-radius: 14px;
-  padding: 30px 25px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-
+  background: #0f172a;
+  border: 2px solid #38bdf8;
+  border-radius: 18px;
+  padding: 30px 24px;
+  color: #f8fafc;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.15),
+      transparent 60%
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+    border-color: #0ea5e9;
+  }
+  h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+  p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    margin-bottom: 6px;
   }
 `;
+
 const PaperTitle = styled.h3`
   font-size: 1.4rem;
   color: #0f172a;
@@ -63,7 +99,7 @@ const Description = styled.p`
   line-height: 1.6;
 `;
 const Meta = styled.div`
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #ffffff;
   margin-bottom: 14px;
 `;

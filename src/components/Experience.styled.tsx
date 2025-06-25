@@ -37,32 +37,51 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  height: 150px;
-  background: #366baf;
-  border-radius: 14px;
-  padding: 25px 30px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #0f172a;
+  border: 2px solid #38bdf8;
+  border-radius: 18px;
+  padding: 30px 24px;
+  color: #f8fafc;
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.15),
+      transparent 60%
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.4);
+    border-color: #0ea5e9;
   }
-
   h3 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    color: #f8fafc;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 12px;
   }
-
   p {
-    margin: 0;
+    font-size: 1.05rem;
     color: #cbd5e1;
-    font-size: 1.1rem;
-    padding-bottom: 35px;
+    margin-bottom: 6px;
   }
 `;
 
@@ -77,73 +96,105 @@ export const ExperienceContainer = styled.div`
     margin: 0;
   }
 `;
-
 export const Overlay = styled.div`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(14, 36, 64, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
 `;
 
 export const ModalBox = styled.div`
   position: relative;
-  background: #ffffff;
-  padding: 35px 30px;
-  border-radius: 12px;
-  max-width: 520px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 40px 35px;
   width: 90%;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.2);
-  max-height: 80vh;
+  max-width: 650px;
+  max-height: 85vh;
   overflow-y: auto;
-  color: #1e293b;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 50px rgba(56, 189, 248, 0.2);
+  color: #e2e8f0;
+
+  animation: modalEnter 0.4s ease;
+
+  @keyframes modalEnter {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
 
   h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+    color: #f0f9ff;
   }
 
   h4 {
-    margin-top: 25px;
+    margin-top: 24px;
     margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #334155;
+    font-size: 1.15rem;
+    color: #7dd3fc;
   }
 
   p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #475569;
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #cbd5e1;
   }
 
   ul {
-    margin: 0;
     padding-left: 20px;
+    margin-top: 10px;
   }
 
   li {
     margin-bottom: 8px;
-    font-size: 0.95rem;
-    color: #475569;
+    font-size: 0.98rem;
+    color: #cbd5e1;
+    list-style: disc;
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #38bdf8;
+    border-radius: 4px;
   }
 `;
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 16px;
-  right: 20px;
-  background: none;
-  border: none;
+  top: 20px;
+  right: 24px;
+  width: 38px;
+  height: 38px;
   font-size: 1.6rem;
-  font-weight: bold;
-  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  color: #ffffff;
   cursor: pointer;
-  transition: color 0.2s ease;
+  z-index: 1001;
+  transition: all 0.25s ease;
+
   &:hover {
-    color: #1e293b;
+    background: #f87171;
+    color: #ffffff;
+    transform: rotate(90deg);
   }
 `;

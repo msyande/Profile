@@ -50,8 +50,8 @@ const AboutMe = () => {
           I specialize in front-end development using React, Bootstrap, AG-Grid,
           and CSS, delivering seamless experiences across desktop, tablet, and
           mobile platforms. On the back end, I'm confident in developing
-          reliable APIs and services, supported by experience with PL-SQL,
-          Android, and thorough unit testing practices.
+          reliable APIs and services, supported by experience with PL-SQL and
+          thorough unit testing practices.
         </Paragraph>
         <Paragraph>
           I bring a strong ability to translate business requirements into
@@ -62,8 +62,8 @@ const AboutMe = () => {
           coordination.
         </Paragraph>
         <Paragraph>
-          Whether it's crafting intuitive UIs or optimizing backend logic, I’m
-          driven by a love for clean code, scalable architecture, and impactful
+          Whether it's crafting intuitive UIs or optimizing backend logic, I'm
+          driven by a love for clean code, scalable architecture and impactful
           software.
         </Paragraph>
       </ParagraphContainer>

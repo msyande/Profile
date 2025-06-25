@@ -12,6 +12,11 @@ const GlobalStyles = createGlobalStyle`
     background-size: cover;
     color: #f8fafc;
   }
+    body.modal-open nav {
+    z-index: 0 !important;
+    pointer-events: none;
+    opacity: 0.2;
+  }
 `;
 
 export default GlobalStyles;

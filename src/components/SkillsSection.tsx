@@ -7,6 +7,7 @@ import figma from "../images/icons/figma.svg";
 import typescript from "../images/icons/typescript.svg";
 import react from "../images/icons/react.svg";
 import git from "../images/icons/git.svg";
+import github from "../images/icons/github.svg";
 import android from "../images/icons/android.svg";
 import redux from "../images/icons/redux.svg";
 import jsx from "../images/icons/jsx.svg";
@@ -18,9 +19,11 @@ import intellij from "../images/icons/intellij.svg";
 import vsCode from "../images/icons/vsCode.svg";
 import jira from "../images/icons/jira.svg";
 import micronaut from "../images/icons/micronaut.svg";
+import c from "../images/icons/c.svg";
+import cPlus from "../images/icons/c++.svg";
 
 const Section = styled.section`
-  padding: 80px 40px;
+  padding: 30px 40px;
 `;
 
 const Title = styled.h2`
@@ -75,8 +78,8 @@ const TECHNICAL_SKILLS = {
     { name: "Redux", icon: redux },
     { name: "JSX", icon: jsx },
     { name: "Typescript", icon: typescript },
+    { name: "Git", icon: git },
     { name: "Android", icon: android },
-    { name: "GitHub", icon: git },
     { name: "Rest APIs", icon: restApi },
   ],
   frameworks_and_libraries: [
@@ -87,11 +90,15 @@ const TECHNICAL_SKILLS = {
     { name: "Micronaut", icon: micronaut },
   ],
   tools_and_IDE: [
-    { name: "Figma", icon: figma },
-    { name: "Git", icon: git },
-    { name: "JIRA", icon: jira },
     { name: "VS Code", icon: vsCode },
     { name: "IntelliJ", icon: intellij },
+    { name: "Figma", icon: figma },
+    { name: "GitHub", icon: github },
+    { name: "JIRA", icon: jira },
+  ],
+  additional_skills: [
+    { name: "C", icon: c },
+    { name: "C++", icon: cPlus },
   ],
 };
 

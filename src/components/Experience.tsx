@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ExperienceType } from "../types/experienceType.d.tsx";
 import experiences from "../data/experiences.json";
 import {
@@ -13,7 +13,16 @@ import {
 
 export default function Experience() {
   const [selected, setSelected] = useState<ExperienceType | null>(null);
-
+  useEffect(() => {
+    document.body.style.overflow = selected ? "hidden" : "auto";
+    if (selected) {
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("modal-open");
+    }
+  }, [selected]);
   const handleCardClick = (exp: ExperienceType) => {
     setSelected(exp);
   };

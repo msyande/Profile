@@ -7,11 +7,12 @@ import SkillsSection from "./components/SkillsSection.tsx";
 import ContactSection from "./components/ContactSection.tsx";
 import Footer from "./components/Footer.tsx";
 import Papers from "./components/Papers.tsx";
-import Drawings from "./components/CreativeExpressions.tsx";
+import CreativeExpressions from "./components/CreativeExpressions.tsx";
 import Navbar from "./components/Navbar.tsx";
 
 function App() {
   const aboutRef = useRef < HTMLDivElement > null;
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY < 10 && window.location.hash) {
@@ -33,8 +34,10 @@ function App() {
       <AboutMe ref={aboutRef} />
       <Experience />
       <SkillsSection />
-      <Papers />
-      <Drawings />
+      <div id="more">
+        <CreativeExpressions />
+        <Papers />
+      </div>
       <ContactSection />
       <Footer />
       <Navbar />

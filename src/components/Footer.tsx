@@ -36,14 +36,14 @@ const Footer = () => {
     <FooterContainer>
       <SocialLinks>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/mahima_0502/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaInstagram />
         </a>
         <a
-          href="https://facebook.com"
+          href="https://www.facebook.com/mahima.yande"
           target="_blank"
           rel="noopener noreferrer"
         >

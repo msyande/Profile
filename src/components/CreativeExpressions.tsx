@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import face from "../images/drawings/face.jpeg";
@@ -9,7 +9,6 @@ import radhakrishna from "../images/drawings/radhakrishna.jpeg";
 import sketch1 from "../images/drawings/sketch1.jpeg";
 import sketch2 from "../images/drawings/sketch2.jpeg";
 import sketch3 from "../images/drawings/sketch3.jpeg";
-
 import rangoli1 from "../images/rangoli/rangoli1.jpeg";
 import rangoli2 from "../images/rangoli/rangoli2.jpeg";
 import rangoli3 from "../images/rangoli/rangoli3.jpeg";
@@ -22,108 +21,161 @@ import rangoli9 from "../images/rangoli/rangoli9.jpeg";
 import rangoli10 from "../images/rangoli/rangoli10.jpeg";
 
 const Section = styled.section`
-  padding: 100px 20px;
+  padding-top: 20px;
   text-align: center;
 `;
-
 const Title = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 20px;
 `;
-
 const Description = styled.p`
   max-width: 700px;
   margin: 0 auto 50px;
   font-size: 1.1rem;
   line-height: 1.6;
 `;
-
 const CardGrid = styled.div`
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
 `;
-
 const ArtCard = styled.div`
-  background: #366baf;
-  border-radius: 14px;
+  background: #1e293b;
+  border: 2px solid #38bdf8;
+  border-radius: 18px;
   padding: 40px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   width: 260px;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+  position: relative;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 0.2s ease;
-  border: 2px solid #2a5388;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+  z-index: 1;
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
+    box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+    border-color: #0ea5e9;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(56, 189, 248, 0.12),
+      transparent 60%
+    );
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+  }
+  &:hover::before {
+    opacity: 1;
   }
   h3 {
     margin: 0;
-    font-size: 1.5rem;
-    color: #1e293b;
+    font-size: 1.6rem;
+    color: #f1f5f9;
+    text-align: center;
   }
   span {
     font-size: 3rem;
     display: block;
     margin-bottom: 20px;
+    text-align: center;
+    color: #f8fafc;
   }
 `;
-
 const Overlay = styled(motion.div)`
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
-
 const ModalContent = styled(motion.div)`
-  background: white;
-  border-radius: 14px;
-  padding: 20px;
-  max-width: 90%;
-  max-height: 80vh;
-  text-align: center;
+  backdrop-filter: blur(14px);
+  padding: 30px;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
 `;
-
-const ModalImage = styled.img`
-  max-height: 60vh;
-  max-width: 80vw;
-  object-fit: contain;
-  border-radius: 10px;
-`;
-
 const NavButton = styled.button`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: white;
+  background: #ffffffcc;
   border: none;
+  border-radius: 50%;
   font-size: 2rem;
-  padding: 10px;
+  padding: 10px 16px;
   cursor: pointer;
   z-index: 1000;
-
+  transition: background 0.2s;
+  margin: 0px 60px;
   &:hover {
-    background: #f1f5f9;
+    background: #e2e8f0;
+  }
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 `;
-
 const CloseButton = styled.button`
   position: absolute;
-  top: 15px;
+  top: 70px;
   right: 20px;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   background: none;
   border: none;
-  color: #888;
+  color: #fff;
   cursor: pointer;
-
+  z-index: 1001;
   &:hover {
-    color: #000;
+    color: #f87171;
   }
+`;
+const CarouselWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  overflow: hidden;
+  max-width: 90vw;
+  padding: 40px 20px;
+  position: relative;
+`;
+
+const CarouselImage = styled(motion.img)<{ isActive: boolean }>`
+  width: ${(props) => (props.isActive ? "420px" : "200px")};
+  height: auto;
+  border-radius: 14px;
+  filter: ${(props) => (props.isActive ? "none" : "blur(3px)")};
+  opacity: ${(props) => (props.isActive ? 1 : 0.5)};
+  box-shadow: ${(props) =>
+    props.isActive ? "0 0 25px rgba(56, 189, 248, 0.4)" : "none"};
+  transition: all 0.4s ease-in-out;
+  object-fit: contain;
 `;
 
 export default function CreativeExpressions() {
@@ -156,7 +208,16 @@ export default function CreativeExpressions() {
       { title: "Rangoli 10", image: rangoli10 },
     ],
   };
-
+  useEffect(() => {
+    document.body.style.overflow = selectedGallery ? "hidden" : "auto";
+    if (selectedGallery) {
+      document.body.style.overflow = "hidden";
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.classList.remove("modal-open");
+    }
+  }, [selectedGallery]);
   const currentGallery = selectedGallery ? galleries[selectedGallery] : [];
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % currentGallery.length);
@@ -199,21 +260,35 @@ export default function CreativeExpressions() {
             exit={{ opacity: 0 }}
           >
             <ModalContent
-              initial={{ scale: 0.9 }}
+              initial={{ scale: 0.95 }}
               animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
+              exit={{ scale: 0.95 }}
               onClick={(e) => e.stopPropagation()}
             >
               <CloseButton onClick={closeModal}>&times;</CloseButton>
-              <ModalImage
-                src={currentGallery[currentIndex].image}
-                alt={currentGallery[currentIndex].title}
-              />
-              <p>{currentGallery[currentIndex].title}</p>
-              <NavButton style={{ left: 10 }} onClick={prevImage}>
+
+              <CarouselWrapper>
+                {[-1, 0, 1].map((offset) => {
+                  const total = currentGallery.length;
+                  const index = (currentIndex + offset + total) % total;
+                  const isActive = offset === 0;
+
+                  return (
+                    <CarouselImage
+                      key={index + "-" + currentIndex}
+                      src={currentGallery[index].image}
+                      alt={currentGallery[index].title}
+                      isActive={isActive}
+                      initial={{ opacity: 0, scale: 0.8, x: offset * 100 }}
+                      animate={{ opacity: 1, scale: isActive ? 1 : 0.85, x: 0 }}
+                    />
+                  );
+                })}
+              </CarouselWrapper>
+              <NavButton onClick={prevImage} style={{ left: 10 }}>
                 ‹
               </NavButton>
-              <NavButton style={{ right: 10 }} onClick={nextImage}>
+              <NavButton onClick={nextImage} style={{ right: 10 }}>
                 ›
               </NavButton>
             </ModalContent>

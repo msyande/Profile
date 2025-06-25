@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import ProfileImg from "../images/profile.jpeg";
 import { FiDownload } from "react-icons/fi";
 
@@ -135,13 +135,18 @@ export default function Profile() {
             TypeScript, and modern frontend technologies.
           </Intro>
           <IconRow>
-            <a href="mailto:mahima.yande21@gmail.com">
-              <FaEnvelope />
-            </a>
-            <a href="https://github.com/msyande">
+            <a
+              href="https://github.com/msyande"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/mahima-yande-84a213189">
+            <a
+              href="https://www.linkedin.com/in/mahima-yande-84a213189"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaLinkedin />
             </a>
           </IconRow>
