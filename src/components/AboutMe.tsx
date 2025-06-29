@@ -6,11 +6,17 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
 `;
+
 const Heading = styled.h2`
   font-size: 2.8rem;
   margin-bottom: 30px;
   position: relative;
+  color: #f8fafc;
+
   &::after {
     content: "";
     width: 80px;
@@ -20,19 +26,39 @@ const Heading = styled.h2`
     margin: 10px auto 0;
     border-radius: 2px;
   }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+  }
 `;
+
 const ParagraphContainer = styled.div`
   max-width: 900px;
   margin-top: 20px;
+  padding: 0 10px;
+
+  @media (max-width: 480px) {
+    padding: 0 5px;
+  }
 `;
+
 const Paragraph = styled.p`
   font-size: 1.1rem;
   line-height: 1.8;
   margin-bottom: 20px;
   color: #cbd5e1;
+
   @media (max-width: 768px) {
     font-size: 1rem;
-    text-align: left;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 `;
 

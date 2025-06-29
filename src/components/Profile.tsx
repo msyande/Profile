@@ -165,8 +165,10 @@ export default function Profile() {
           <Name>Mahima Yande</Name>
           <Title>Software Development Engineer</Title>
           <Intro>
-            I build elegant, responsive web applications using React,
-            TypeScript, and modern frontend technologies.
+            I craft elegant, responsive web apps using React and TypeScript.
+            Skilled in modern frontend technologies, I build intuitive user
+            experiences. My focus is on performance, scalability, and clean UI.
+            Passionate about turning ideas into seamless digital products.
           </Intro>
           <IconRow>
             <a
