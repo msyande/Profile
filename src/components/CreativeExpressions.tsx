@@ -27,6 +27,15 @@ const Section = styled.section`
 const Title = styled.h2`
   font-size: 2.5rem;
   margin-bottom: 20px;
+  &::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #38bdf8;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
 `;
 const Description = styled.p`
   max-width: 700px;

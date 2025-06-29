@@ -30,6 +30,15 @@ const Title = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 60px;
+  &::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background-color: #38bdf8;
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
 `;
 
 const CategoryWrapper = styled.div`

@@ -4,47 +4,74 @@ import ProfileImg from "../images/profile.jpeg";
 import { FiDownload } from "react-icons/fi";
 
 const Section = styled.section`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
   overflow: hidden;
+  background: transparent;
 `;
 const StyledComponent = styled.div`
-  display: inline-flex;
-  height: 100vh;
+  display: flex;
+  flex-direction: row;
   width: 100%;
+  max-width: 1200px;
+  gap: 60px;
+  align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 40px;
+  }
 `;
 const Left = styled.div`
   flex: 1;
-  padding-left: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0 20px;
+  @media (max-width: 768px) {
+    text-align: center;
+    padding: 0;
+  }
 `;
 const Right = styled.div`
   flex: 1;
   display: flex;
-  align-items: center;
   justify-content: center;
-  position: relative;
-  padding-right: 130px;
 `;
 const Name = styled.h1`
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin: 10px 0;
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+  }
 `;
 const Title = styled.h2`
-  font-size: 1.25rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 const Intro = styled.p`
   font-size: 1rem;
   margin-top: 20px;
-  max-width: 400px;
+  max-width: 500px;
+  @media (max-width: 768px) {
+    margin: 20px auto;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.95rem;
+  }
 `;
+
 const IconRow = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 30px;
+  justify-content: flex-start;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 
   a {
     background-color: #fff;
@@ -65,9 +92,12 @@ const IconRow = styled.div`
     }
   }
 `;
+
 const ProfileImage = styled.img`
-  width: 450px;
+  min-width: 375px;
+  max-width: 400px;
   height: 750px;
+  width: 80%;
   object-fit: cover;
   border-radius: 180px / 240px;
   border: 6px solid #38bdf8;
@@ -94,10 +124,9 @@ const ProfileImage = styled.img`
 
 const DownloadButton = styled.a`
   display: inline-flex;
-  width: 200px;
-  margin-top: 50px;
   align-items: center;
   gap: 10px;
+  margin-top: 40px;
   padding: 14px 28px;
   font-size: 1rem;
   font-weight: 600;
@@ -117,7 +146,12 @@ const DownloadButton = styled.a`
     transform: translateY(0);
     box-shadow: 0 6px 12px rgba(59, 130, 246, 0.2);
   }
+  @media (max-width: 768px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
+
 const Icon = styled(FiDownload)`
   font-size: 1.2rem;
 `;
@@ -151,8 +185,7 @@ export default function Profile() {
             </a>
           </IconRow>
           <DownloadButton href="/MahimaYandeResume.pdf" download>
-            <Icon style={{ marginRight: "8px" }} />
-            Download Resume
+            <Icon /> Download Resume
           </DownloadButton>
         </Left>
 

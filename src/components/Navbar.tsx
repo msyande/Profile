@@ -83,16 +83,16 @@ export default function Navbar() {
           <FaUserAlt size={16} /> About
         </a>
         <a
-          href="#skills"
-          className={activeSection === "#skills" ? "active" : ""}
-        >
-          <FaTools size={16} /> Skills
-        </a>
-        <a
           href="#experiences"
           className={activeSection === "#experiences" ? "active" : ""}
         >
           <FaBriefcase size={16} /> Experience
+        </a>
+        <a
+          href="#skills"
+          className={activeSection === "#skills" ? "active" : ""}
+        >
+          <FaTools size={16} /> Skills
         </a>
         <a href="#more" className={activeSection === "#more" ? "active" : ""}>
           <FaEllipsisH size={16} /> More
