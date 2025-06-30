@@ -63,7 +63,6 @@ const Intro = styled.p`
     font-size: 0.95rem;
   }
 `;
-
 const IconRow = styled.div`
   display: flex;
   gap: 20px;
@@ -72,7 +71,6 @@ const IconRow = styled.div`
   @media (max-width: 768px) {
     justify-content: center;
   }
-
   a {
     background-color: #fff;
     padding: 10px;
@@ -81,20 +79,17 @@ const IconRow = styled.div`
     align-items: center;
     justify-content: center;
     transition: background 0.3s;
-
     &:hover {
       background-color: #cbd5e1;
     }
-
     svg {
       color: #0f172a;
       font-size: 20px;
     }
   }
 `;
-
 const ProfileImage = styled.img`
-  min-width: 375px;
+  min-width: 350px;
   max-width: 400px;
   height: 750px;
   width: 80%;
@@ -108,7 +103,6 @@ const ProfileImage = styled.img`
     transform: scale(1.04);
     box-shadow: 0 16px 36px rgba(56, 189, 248, 0.5);
   }
-
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4);
@@ -121,7 +115,6 @@ const ProfileImage = styled.img`
     }
   }
 `;
-
 const DownloadButton = styled.a`
   display: inline-flex;
   align-items: center;
@@ -151,7 +144,6 @@ const DownloadButton = styled.a`
     margin-right: auto;
   }
 `;
-
 const Icon = styled(FiDownload)`
   font-size: 1.2rem;
 `;
@@ -190,7 +182,6 @@ export default function Profile() {
             <Icon /> Download Resume
           </DownloadButton>
         </Left>
-
         <Right>
           <ProfileImage src={ProfileImg} alt="Mahima Yande" />
         </Right>

@@ -13,7 +13,6 @@ const Nav = styled.nav`
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 800px;
   padding: 14px 30px;
   background: rgba(56, 189, 248, 0.15);
   backdrop-filter: blur(8px);
@@ -23,16 +22,11 @@ const Nav = styled.nav`
   align-items: center;
   z-index: 1000;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 16px;
-    gap: 10px;
-  }
 `;
-
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
+  gap: 12px;
   a {
     text-decoration: none;
     color: #ffffff;
@@ -54,9 +48,22 @@ const NavLinks = styled.div`
       background: linear-gradient(145deg, #60a5fa, #38bdf8);
       font-weight: 600;
     }
+    span {
+      @media (max-width: 600px) {
+        display: none;
+      }
+    }
   }
-  @media (max-width: 768px) {
-    flex-direction: column;
+  @media (max-width: 600px) {
+    gap: 8px;
+    a {
+      padding: 10px;
+      font-size: 0.75rem;
+
+      svg {
+        font-size: 1rem;
+      }
+    }
   }
 `;
 
@@ -70,7 +77,6 @@ export default function Navbar() {
       setActiveSection(window.location.hash || "#about");
     };
     window.addEventListener("hashchange", onHashChange);
-
     return () => {
       window.removeEventListener("hashchange", onHashChange);
     };
@@ -80,28 +86,33 @@ export default function Navbar() {
     <Nav>
       <NavLinks>
         <a href="#about" className={activeSection === "#about" ? "active" : ""}>
-          <FaUserAlt size={16} /> About
+          <FaUserAlt size={16} />
+          <span>About</span>
         </a>
         <a
           href="#experiences"
           className={activeSection === "#experiences" ? "active" : ""}
         >
-          <FaBriefcase size={16} /> Experience
+          <FaBriefcase size={16} />
+          <span>Experience</span>
         </a>
         <a
           href="#skills"
           className={activeSection === "#skills" ? "active" : ""}
         >
-          <FaTools size={16} /> Skills
+          <FaTools size={16} />
+          <span>Skills</span>
         </a>
         <a href="#more" className={activeSection === "#more" ? "active" : ""}>
-          <FaEllipsisH size={16} /> More
+          <FaEllipsisH size={16} />
+          <span>More</span>
         </a>
         <a
           href="#contact"
           className={activeSection === "#contact" ? "active" : ""}
         >
-          <FaEnvelope size={16} /> Contact
+          <FaEnvelope size={16} />
+          <span>Contact</span>
         </a>
       </NavLinks>
     </Nav>

@@ -24,12 +24,15 @@ import cPlus from "../images/icons/c++.svg";
 
 const Section = styled.section`
   padding: 30px 40px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
 `;
-
 const Title = styled.h2`
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 60px;
+
   &::after {
     content: "";
     width: 80px;
@@ -39,43 +42,57 @@ const Title = styled.h2`
     margin: 10px auto 0;
     border-radius: 2px;
   }
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
-
 const CategoryWrapper = styled.div`
   margin-bottom: 60px;
-  text-align: -webkit-center;
+  text-align: center;
 `;
-
 const CategoryTitle = styled.h3`
   font-size: 1.7rem;
   margin-bottom: 30px;
-  text-align: center;
   text-transform: capitalize;
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+  }
 `;
-
 const Grid = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 50px;
-  width: 70%;
+  gap: 40px;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    gap: 30px;
+  }
+  @media (max-width: 480px) {
+    gap: 20px;
+  }
 `;
-
 const SkillCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  width: 100px;
 `;
-
 const SkillIcon = styled.img`
   width: 50px;
   height: 50px;
   margin-bottom: 10px;
   object-fit: contain;
-`;
 
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+  }
+`;
 const SkillName = styled.span`
   font-size: 0.95rem;
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
 `;
 
 const TECHNICAL_SKILLS = {
